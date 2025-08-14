@@ -1,0 +1,17 @@
+[package]
+name = "sil-node"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+color-eyre = "0.6"
+
+[dependencies.log]
+version = "0.4"
+features = ["std"]
+
+[dependencies.env_logger]
+version = "0.10"
+
+[dependencies]
+runtime = { package = "sil-runtime", path = "../runtime" }

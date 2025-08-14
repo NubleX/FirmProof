@@ -1,0 +1,42 @@
+[package]
+name = "sil-runtime"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "sil_runtime"
+crate-type = ["rlib"]
+
+[dependencies]
+# FRAME core crates (to be filled when wiring real runtime)
+sp-runtime = { version = "28.0.0", default-features = false }
+sp-std = { version = "13.0.0", default-features = false }
+sp-core = { version = "28.0.0", default-features = false }
+frame-support = { version = "28.0.0", default-features = false }
+frame-system = { version = "28.0.0", default-features = false }
+
+# Our custom pallets (stubs)
+pallet-devices = { path = "../pallets/devices", default-features = false }
+pallet-firmware = { path = "../pallets/firmware", default-features = false }
+pallet-vulns = { path = "../pallets/vulns", default-features = false }
+pallet-scoring = { path = "../pallets/scoring", default-features = false }
+pallet-bounties = { path = "../pallets/bounties", default-features = false }
+pallet-certifications = { path = "../pallets/certifications", default-features = false }
+pallet-anchors = { path = "../pallets/anchors", default-features = false }
+
+[features]
+default = ["std"]
+std = [
+    "sp-runtime/std",
+    "sp-std/std",
+    "sp-core/std",
+    "frame-support/std",
+    "frame-system/std",
+    "pallet-devices/std",
+    "pallet-firmware/std",
+    "pallet-vulns/std",
+    "pallet-scoring/std",
+    "pallet-bounties/std",
+    "pallet-certifications/std",
+    "pallet-anchors/std",
+]

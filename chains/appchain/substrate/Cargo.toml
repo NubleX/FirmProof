@@ -1,0 +1,13 @@
+[workspace]
+members = [
+    "node",
+    "runtime",
+    "pallets/devices",
+    "pallets/firmware",
+    "pallets/vulns",
+    "pallets/scoring",
+    "pallets/bounties",
+    "pallets/certifications",
+    "pallets/anchors",
+]
+resolver = "2"
